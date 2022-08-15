@@ -4,6 +4,11 @@ export default function decodeStatus(status){
   var level = 'Unknown';
 
   switch(status.level.toLowerCase()){
+    case 'offline':
+      color = 'red';
+      message = 'Pace reporting source offline.';
+      level = 'Offline';
+      break;
     case 'error':
       color = 'red';
       message = `Source reporting error: ${status.message}`;
@@ -21,6 +26,7 @@ export default function decodeStatus(status){
       break;
     case 'okay':
     case 'ok':
+    case 'online':
       color = 'green';
       level = 'Okay';
       message = status.message;

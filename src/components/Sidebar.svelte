@@ -3,7 +3,7 @@
   import {link, location} from 'svelte-spa-router';
 </script>
 
-<div class="flex flex-1 flex-col w-20 h-screen px-3 pt-8 border-r justify-between bg-gray-900">
+<div class="flex flex-1 flex-col w-20 h-screen px-4 pt-8 border-r justify-between bg-gray-900">
   <div class="overflow-y-auto justify-center mt-4">
     <aside class="flex">
       <ul class="space-y-3">

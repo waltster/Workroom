@@ -7,7 +7,7 @@ import Story from './routes/Story.svelte';
 export const routes = {
   '/': Dashboard,
   '/sources': Sources,
-  '/source/:source_uid': SourceView,
+  '/source/:source_uuid': SourceView,
   '/story': Story,
   '*': NotFound
 };
