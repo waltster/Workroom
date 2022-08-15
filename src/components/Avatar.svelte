@@ -1,9 +1,10 @@
 <script>
+  import {link} from 'svelte-spa-router';
   export let initials = null;
   export let avatar_img = '/avatar.svg'
 </script>
 
-<a href="#/user">
+<a href="/user" use:link>
   {#if !initials}
   <div class="flex items-center p-2 text-base font-normal text-grey-50 rounded-lg">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-8 h-8 text-gray-50 transition duration-75 gray-50">
