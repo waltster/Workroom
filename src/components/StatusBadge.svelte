@@ -31,7 +31,7 @@
 <div class="font-mono inline-block bg-pink-100 text-pink-800 border-[1.5px] border-pink-300 text-sm font-medium  px-2.5 py-0.5 rounded dark:bg-pink-200 dark:text-pink-900">
   {message}
 </div>
-:else}
+{:else}
 <div class="font-mono inline-block bg-gray-100 text-gray-800 border-[1.5px] border-gray-300 text-sm font-medium  px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
   {message}
 </div>
