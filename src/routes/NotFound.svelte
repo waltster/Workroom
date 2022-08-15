@@ -1,5 +1,5 @@
 <script>
-import { link } from "svelte-spa-router";
+import {link, location} from "svelte-spa-router";
 </script>
 
 <div class="flex flex-1 flex-col items-center justify-center align-center pt-10">
@@ -10,9 +10,12 @@ import { link } from "svelte-spa-router";
     </svg>
   </div>
   <div class="flex flex-col pt-10">
-    <h1 class="text-2xl font-bold font-mono">Could not find that page</h1>
+    <h1 class="text-2xl font-bold font-mono">404: Could not find that page.</h1>
   </div>
   <div class="flex flex-col pt-10">
     <h1 class="text-l font-mono font-base">This typically happens when a resource has been deleted or when a link was typed incorrectly.</h1>
+  </div>
+  <div class="flex flex-col pt-10">
+    <h1 class="text-md font-mono font-base">Here's the URL to report broken: <code class="bg-gray-200">{$location}</code></h1>
   </div>
 </div>
