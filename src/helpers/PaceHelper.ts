@@ -1,13 +1,18 @@
 import {config} from '../../config.js';
 
-export async function fetchSources(){
+export async function fetchSourceStatus(uuid?: string){
   try{
-    var req = await fetch(`${config.pace_server}/sources/status`, {method: 'GET'});
+    var req = null;
+
+    if(uuid){
+      req = await fetch(`${config.pace_server}/source/${uuid}/status`, {method: 'GET'});
+    }else{
+      req = await fetch(`${config.pace_server}/sources/status`, {method: 'GET'});
+    }
 
     if(!req.ok){
       console.log(`${req.status} ${req.statusText}`);
-      return [];
-      return;
+      return null;
     }
 
     var sources = await req.json();
@@ -15,14 +20,14 @@ export async function fetchSources(){
     return sources;
   }catch(e){
     console.log(e);
-    return []
+    return null;
   }
 }
 
 export function paceEndpoint(source){
   if(typeof source === 'string'){
-    return `${config.pace_server}/source/${source}`;
+    return `${config.pace_server}/source/${source}/status`;
   }else{
-    return `${config.pace_server}/source/${source.uuid}`;
+    return `${config.pace_server}/source/${source.uid}/status`;
   }
 }

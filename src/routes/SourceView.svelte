@@ -14,13 +14,7 @@
   var source = null;
 
   async function fetchSource(){
-    var sources = await PaceHelper.fetchSources();
-
-    for(const source_remote of sources){
-      if(source_remote.uuid == params.source_uuid){
-        source = source_remote;
-      }
-    }
+    source = await PaceHelper.fetchSourceStatus(params.source_uuid);
 
     return;
   }
@@ -51,7 +45,7 @@
             <LargeStatusBadge color={decodeStatus(source.status).color} message={decodeStatus(source.status).level.toUpperCase()} />
           </div>
           <div class="flex justify-between border-b-2 border-gray-300 pb-2">
-            <span class="text-md font-mono">Data Source #{source.uuid}</span>
+            <span class="text-md font-mono">Data Source #{source.uid}</span>
           </div>
           <div class="pt-3">
             <div class="flex justify-start">
